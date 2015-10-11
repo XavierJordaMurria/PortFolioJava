@@ -97,7 +97,6 @@ public class Number2Name
 		}
 		else if(num > 15 && (num < 20 ))
 		{
-			System.out.println("GOT here with n => "+num);
 			if(num == 18)
 			{
 				finalName = "eighteen";
@@ -115,18 +114,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "twenty-" + numSmallerThan15((int) (num % 10));
-			}
-		}
-		else if ((num >= 20) && (num < 30))
-		{
-			if( num == 20)
-			{
-				finalName = "twenty";
-			}
-			else
-			{
-				finalName = "twenty-" + numSmallerThan15((int) (num % 10));
+				finalName = "twenty " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		else if ((num >= 30) && (num < 40))
@@ -137,7 +125,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "thirty-" + numSmallerThan15((int) (num % 10));
+				finalName = "thirty " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		else if ((num >= 40) && (num < 50))
@@ -148,7 +136,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "fourty-" + numSmallerThan15((int) (num % 10));
+				finalName = "fourty " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		else if ((num >= 50) && (num < 60))
@@ -159,7 +147,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "fifty-" + numSmallerThan15((int) (num % 10));
+				finalName = "fifty " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		else if ((num >= 60) && (num < 70))
@@ -170,7 +158,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "sixty-" + numSmallerThan15((int) (num % 10));
+				finalName = "sixty " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		else if ((num >= 70) && (num < 80))
@@ -181,7 +169,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "seventy-" + numSmallerThan15((int) (num % 10));
+				finalName = "seventy " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		else if ((num >= 80) && (num < 90))
@@ -192,7 +180,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "eighty-" + numSmallerThan15((int) (num % 10));
+				finalName = "eighty " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		else if ((num >= 90) && (num < 100))
@@ -203,7 +191,7 @@ public class Number2Name
 			}
 			else
 			{
-				finalName = "ninety-" + numSmallerThan15((int) (num % 10));
+				finalName = "ninety " + numSmallerThan15((int) (num % 10));
 			}
 		}
 		

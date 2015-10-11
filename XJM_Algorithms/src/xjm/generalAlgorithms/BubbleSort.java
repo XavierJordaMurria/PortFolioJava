@@ -40,16 +40,33 @@ public class BubbleSort
 	
 	public BubbleSort() {}
 	
+    /**
+     * Set the member variable array2BeSorted with an int[]
+     * @param int[] array
+     */
 	public void setArray2BeSorted(int[] arr)
 	{
 		array2BeSorted = arr;
 	}
 	
+    /**
+     * It Sorts int arrays.
+     * @throws custom general exception
+     * 
+     * @return int[] sorted array
+     */
 	public int[] getSortedArray() throws GeneralException
 	{
 		return getSortedArray(array2BeSorted);
 	}
 	
+    /**
+     * It Sorts int arrays.
+     * @param int[] array to be sorted
+     * @throws custom general exception
+     * 
+     * @return int[] sorted array
+     */
 	public int[] getSortedArray(int[] arr) throws GeneralException
 	{
 		if(arr == null)

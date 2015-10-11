@@ -11,12 +11,13 @@ import org.junit.Test;
 
 /**
  * @author xj
- * 
- * Basic test case for the bubble sort algorithm. It consists in 
- * passing 
  */
+
 public class BubbleSortTest 
 {
+	 /** Basic test case for the bubble sort algorithm. It consists in 
+	  *   passing an array and comparing the result with its sorted counterpart.
+	  */
 	@Test
 	public void bubbleSortTest() 
 	{
@@ -42,6 +43,9 @@ public class BubbleSortTest
 		}
 	}
 	
+	 /** Basic test case for the bubble sort algorithm. It consists in 
+	  *   passing an array and comparing the result with the same array sorted by the OS.
+	  */
 	@Test
 	public void bubbleSortTest2() 
 	{
