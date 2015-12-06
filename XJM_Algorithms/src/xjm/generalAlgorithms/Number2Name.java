@@ -2,11 +2,14 @@ package xjm.generalAlgorithms;
 
 public class Number2Name 
 {
-
 	private Number2Name() 
 	{
 	}
-	
+
+	/**
+	 * @param num
+	 * @return
+	 */
 	static String printNumberWithLetters(long num)
 	{
 		String finalName = "";
@@ -30,6 +33,11 @@ public class Number2Name
 		return finalName;
 	}
 	
+
+	/**
+	 * @param num
+	 * @return
+	 */
 	private static String numSmallerThan15(int num)
 	{
 		String num2Letters = "";
@@ -87,6 +95,10 @@ public class Number2Name
 		return num2Letters;
 	}
 	
+	/**
+	 * @param num
+	 * @return
+	 */
 	private static String numSmallerThan100(int num)
 	{
 		String finalName = "";

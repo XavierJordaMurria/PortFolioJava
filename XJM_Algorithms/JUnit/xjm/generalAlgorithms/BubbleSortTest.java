@@ -9,6 +9,8 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
+import xjm.generalAlgorithms.testUtils.Utils;
+
 /**
  * @author xj
  */
@@ -35,7 +37,7 @@ public class BubbleSortTest
 			bubbleSort.printArray(bubbleSort.getSortedArray());
 			System.out.println("resultExpected =>");
 			bubbleSort.printArray(resultExpected);
-			assertTrue(compareArrays(resultExpected, bubbleSort.getSortedArray()));
+			assertTrue(Utils.compareArrays(resultExpected, bubbleSort.getSortedArray()));
 		} 
 		catch (GeneralException e) 
 		{
@@ -65,27 +67,11 @@ public class BubbleSortTest
 			System.out.println("arraySortedByOS =>");
 			bubbleSort.printArray(arraySortedByOS);
 			
-			assertTrue(compareArrays(arraySortedByOS, bubbleSort.getSortedArray()));
+			assertTrue(Utils.compareArrays(arraySortedByOS, bubbleSort.getSortedArray()));
 		} 
 		catch (GeneralException e) 
 		{
 			e.printStackTrace();
 		}
-	}
-
-	public boolean compareArrays(int[] array1, int[] array2) 
-	{
-		if (array1 == null) return false;
-		
-		if (array2 == null) return false;
-		
-		if (array1.length != array2.length)return false;
-
-		for (int i = 0; i < array1.length; i++)
-		{
-			if (array1[i] != array2[i]) return false;
-		}
-
-		return true;
 	}
 }
