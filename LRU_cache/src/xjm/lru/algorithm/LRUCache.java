@@ -1,3 +1,4 @@
+package xjm.lru.algorithm;
 /**
  * This class implements and LRU data structure. whereas the LRU cache is a hash table of keys and double linked nodes.
  * @author xj

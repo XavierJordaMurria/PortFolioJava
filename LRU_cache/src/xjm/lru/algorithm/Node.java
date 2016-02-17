@@ -1,3 +1,4 @@
+package xjm.lru.algorithm;
 /**
  * This class node holds the elements that our LRU will contain
  * @author xj

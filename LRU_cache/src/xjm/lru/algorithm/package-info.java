@@ -5,4 +5,4 @@
  * @author xj
  *
  */
-package JUnitTests;
+package xjm.lru.algorithm;
