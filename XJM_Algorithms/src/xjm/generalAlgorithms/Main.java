@@ -15,13 +15,11 @@ public class Main
 //		finalResult = Number2Name.printNumberWithLetters(1201004);
 //		System.out.println(finalResult);
 		
-   		BasicArrayOps basicArrayOps = new BasicArrayOps();
+		Fibonacci fib = new Fibonacci();
 		
-		int[] x = {1,2,3,4,5};
+		System.out.println("res => " + fib.fibonacciRec(14));
 		
-		System.out.println(Arrays.toString(x));
-		System.out.println("Result = > " + Arrays.toString(basicArrayOps.swapArray(x)));
-		System.out.println(Arrays.toString(x));
+		System.out.println("res => " + fib.fibonacciLoop(14));
 	}
 
 }
