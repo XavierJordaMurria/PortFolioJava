@@ -1,4 +1,5 @@
 package xjm.lru.algorithm;
+import java.util.ArrayList;
 /**
  * This class implements and LRU data structure. whereas the LRU cache is a hash table of keys and double linked nodes.
  * @author xj
@@ -115,11 +116,19 @@ public class LRUCache
 		}
 	}
 	
-	public void printList()
+	/**
+	 * Get all the current keys in the map list
+	 * @return a string with all the keys in the map list.
+	 */
+	public String getKeysList()
 	{
+		ArrayList<Integer> keysList = new ArrayList<Integer>();
+
 		for (Integer key : map.keySet()) 
 		{
-		    System.out.println("Key = " + key);
+			keysList.add(key);
 		}
+
+		return keysList.toString();
 	}
 }
