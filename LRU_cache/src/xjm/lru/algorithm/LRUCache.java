@@ -9,10 +9,12 @@ import java.util.HashMap;
 
 public class LRUCache 
 {
-	int capacity;
-	HashMap<Integer, Node> map = new HashMap<Integer, Node>();
-	Node head=null;
-	Node end=null;
+	private int capacity;
+	private HashMap<Integer, Node> map = new HashMap<Integer, Node>();
+	private Node head=null;
+	private Node end=null;
+
+	private Object lock = new Object();
 
 	public LRUCache(int capacity) 
 	{
@@ -26,17 +28,19 @@ public class LRUCache
 	 */
 	public int find(int key) 
 	{
-		if(map.containsKey(key))
+		synchronized(lock) 
 		{
-			Node n = map.get(key);
-			remove(n);
-			setHead(n);
-			return n.value;
+			if(map.containsKey(key))
+			{
+				Node n = map.get(key);
+				remove(n);
+				setHead(n);
+				return n.value;
+			}
 		}
-
 		return -1;
 	}
-	
+
 	/**
 	 * Adds a new node into the list
 	 * @param key (Key-value pair)
@@ -44,30 +48,32 @@ public class LRUCache
 	 */
 	public void add(int key, int value) 
 	{
-		
-		if(map.containsKey(key))
+		synchronized(lock) 
 		{
-			Node old = map.get(key);
-			old.value = value;
-			remove(old);
-			setHead(old);
-		}
-		else
-		{
-			Node created = new Node(key, value);
-			
-			if(map.size() >= capacity)
+			if(map.containsKey(key))
 			{
-				map.remove(end.key);
-				remove(end);
-				setHead(created);
+				Node old = map.get(key);
+				old.value = value;
+				remove(old);
+				setHead(old);
 			}
 			else
 			{
-				setHead(created);
-			}    
+				Node created = new Node(key, value);
 
-			map.put(key, created);
+				if(map.size() >= capacity)
+				{
+					map.remove(end.key);
+					remove(end);
+					setHead(created);
+				}
+				else
+				{
+					setHead(created);
+				}    
+
+				map.put(key, created);
+			}
 		}
 	}
 
@@ -115,7 +121,7 @@ public class LRUCache
 			end = head;
 		}
 	}
-	
+
 	/**
 	 * Get all the current keys in the map list
 	 * @return a string with all the keys in the map list.
